@@ -1,0 +1,84 @@
+1493891444199	geckodriver	INFO	Listening on 127.0.0.1:62362
+1493891445406	mozprofile::profile	INFO	Using profile path /var/folders/qq/clrs_nrs01g1tfc6j2d6_8pm0000gn/T/rust_mozprofile.OepwScNad0u1
+1493891445411	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1493891445441	geckodriver::marionette	INFO	Connecting to Marionette on localhost:62371
+1493891448909	Marionette	INFO	Listening on port 62371
+1493891449032	Marionette	WARN	TLS certificate errors will be ignored for this session
+2017-05-04 17:50:49.561 plugin-container[93324:3666635] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x962f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-05-04 17:50:49.565 plugin-container[93324:3666635] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9903, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1493891490473	geckodriver	INFO	Listening on 127.0.0.1:62456
+1493891491626	mozprofile::profile	INFO	Using profile path /var/folders/qq/clrs_nrs01g1tfc6j2d6_8pm0000gn/T/rust_mozprofile.dPwUAhiiYgV2
+1493891491630	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1493891491635	geckodriver::marionette	INFO	Connecting to Marionette on localhost:62465
+1493891494225	Marionette	INFO	Listening on port 62465
+1493891494294	Marionette	WARN	TLS certificate errors will be ignored for this session
+2017-05-04 17:51:34.801 plugin-container[93352:3667400] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x963b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-05-04 17:51:34.802 plugin-container[93352:3667400] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9903, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1493891560655	geckodriver	INFO	Listening on 127.0.0.1:62549
+1493891561795	mozprofile::profile	INFO	Using profile path /var/folders/qq/clrs_nrs01g1tfc6j2d6_8pm0000gn/T/rust_mozprofile.znvgiaaw7e6T
+1493891561799	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1493891561805	geckodriver::marionette	INFO	Connecting to Marionette on localhost:62558
+1493891564220	Marionette	INFO	Listening on port 62558
+1493891564327	Marionette	WARN	TLS certificate errors will be ignored for this session
+2017-05-04 17:52:44.775 plugin-container[93382:3668485] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x962f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-05-04 17:52:44.779 plugin-container[93382:3668485] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9903, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1493891566729	Marionette	INFO	New connections will no longer be accepted
+1493891590030	geckodriver	INFO	Listening on 127.0.0.1:62625
+1493891591128	mozprofile::profile	INFO	Using profile path /var/folders/qq/clrs_nrs01g1tfc6j2d6_8pm0000gn/T/rust_mozprofile.ETGM8ONmIN4C
+1493891591129	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1493891591134	geckodriver::marionette	INFO	Connecting to Marionette on localhost:62634
+1493891593427	Marionette	INFO	Listening on port 62634
+1493891593536	Marionette	WARN	TLS certificate errors will be ignored for this session
+2017-05-04 17:53:14.021 plugin-container[93402:3669431] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x943f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-05-04 17:53:14.025 plugin-container[93402:3669431] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9703, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1493891607576	geckodriver	INFO	Listening on 127.0.0.1:62703
+1493891608634	mozprofile::profile	INFO	Using profile path /var/folders/qq/clrs_nrs01g1tfc6j2d6_8pm0000gn/T/rust_mozprofile.FAHdRn6FZSEl
+1493891608635	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1493891608640	geckodriver::marionette	INFO	Connecting to Marionette on localhost:62712
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1493891611244	Marionette	INFO	Listening on port 62712
+1493891611313	Marionette	WARN	TLS certificate errors will be ignored for this session
+2017-05-04 17:53:31.915 plugin-container[93417:3669859] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x943b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-05-04 17:53:31.917 plugin-container[93417:3669859] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x943f, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1493891613311	Marionette	INFO	New connections will no longer be accepted
+1493891623496	geckodriver	INFO	Listening on 127.0.0.1:62779
+1493891623618	mozprofile::profile	INFO	Using profile path /var/folders/qq/clrs_nrs01g1tfc6j2d6_8pm0000gn/T/rust_mozprofile.rTD7rxQnp6Mn
+1493891623620	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1493891623625	geckodriver::marionette	INFO	Connecting to Marionette on localhost:62786
+1493891626066	Marionette	INFO	Listening on port 62786
+1493891626147	Marionette	WARN	TLS certificate errors will be ignored for this session
+2017-05-04 17:53:46.599 plugin-container[93433:3670591] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x943b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-05-04 17:53:46.604 plugin-container[93433:3670591] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9703, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1493891628411	Marionette	INFO	New connections will no longer be accepted
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1493892886539	geckodriver	INFO	Listening on 127.0.0.1:63882
+1493892887662	mozprofile::profile	INFO	Using profile path /var/folders/qq/clrs_nrs01g1tfc6j2d6_8pm0000gn/T/rust_mozprofile.ckzb9pXumLix
+1493892887663	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1493892887670	geckodriver::marionette	INFO	Connecting to Marionette on localhost:63896
+1493892890376	Marionette	INFO	Listening on port 63896
+1493892890496	Marionette	WARN	TLS certificate errors will be ignored for this session
+2017-05-04 18:14:50.937 plugin-container[93675:3679954] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x953b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-05-04 18:14:50.941 plugin-container[93675:3679954] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9803, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1493892892543	Marionette	INFO	New connections will no longer be accepted
