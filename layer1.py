@@ -1,118 +1,89 @@
 import facebook
 import requests
 import csv
+import time
 
-arr_client_id = []
-arr_client_url = []
-arr_client_data = []
+arr_personal_id = []
+arr_personal_url = []
+arr_personal_data = []
 
 
-def video_like(graph, video_id):
-    video = graph.get_object(
-        id=video_id,
-        fields='likes', )
-    for row in video['likes']['data']:
-        row = row['id']
-        arr_client_id.append(row)
-        print(row)
-    try:
-        next_page_url = video['likes']['paging']['next']
-    except:
-        print('<= 25')
+def get_personal_id(graph, video_id, path, fieldnames):
+    with open(path, 'a') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
 
-    while True:
+        video = graph.get_object(
+            id=video_id,
+            fields='likes', )
+        for row in video['likes']['data']:
+            personal_id = row['id']
+            writer.writerow({fieldnames[0]: personal_id})
+            print(personal_id)
         try:
-            next_page = requests.get(next_page_url).json()
-            for row in next_page['data']:
-                row = row['id']
-                arr_client_id.append(row)
-                print(row)
-
-            next_page_url = next_page['paging']['next']
+            next_page_url = video['likes']['paging']['next']
         except:
-            print('video_like() done')
-            break
+            print('<= 25')
+
+        while True:
+            try:
+                next_page = requests.get(next_page_url).json()
+                for row in next_page['data']:
+                    personal_id = row['id']
+                    writer.writerow({fieldnames[0]: personal_id})
+                    print(personal_id)
+                next_page_url = next_page['paging']['next']
+            except:
+                break
+    print('get_personal_id() done')
 
 
-def video_comment(graph, video_id):
-    video = graph.get_object(
-        id=video_id,
-        fields='comments', )
-    for row in video['comments']['data']:
-        row = row['from']['id']
-        arr_client_id.append(row)
-        print(row)
-    try:
-        next_page_url = video['comments']['paging']['next']
-    except:
-        print('client_id <= 25')
+def get_personal_url(path, fieldnames):
+    with open(path, 'a') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        for row in arr_personal_id:
+            try:
+                personal_url = 'https://www.facebook.com/app_scoped_user_id/' + row
+                writer.writerow({
+                    fieldnames[0]: personal_url,
+                })
+                print(personal_url)
+            except:
+                pass
+    print('get_personal_url() done')
 
-    while True:
-        try:
-            next_page = requests.get(next_page_url).json()
-            for row in next_page['data']:
-                row = row['from']['id']
-                arr_client_id.append(row)
-                print(row)
-
-            next_page_url = next_page['paging']['next']
-        except:
-            print('video_comment() done')
-            break
-
-
-def get_client_id(graph, video_id):
-    try:
-        video_like(graph, video_id)
-    except:
-        pass
-    try:
-        video_comment(graph, video_id)
-    except:
-        pass
-    print('get_client_id() done')
-
-def get_client_url(graph):
-    for row in arr_client_id:
-        try:
-            client_url = graph.get_object(
-                id=row, )
-            arr_client_url.append(client_url['link'])
-            print(client_url['link'])
-        except:
-            pass
-    print('get_client_url() done')
 
 def csv_write(arr, path, fieldnames):
-    with open(path, 'w') as csvfile:
-        fieldnames = [fieldnames]
+    with open(path, 'a') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for row in arr:
             writer.writerow({fieldnames[0]: row})
             print(row)
-        print('csv_write() done')
+    print('csv_write() done')
 
-def csv_read(path, fieldnames):
+
+def csv_read(arr, path, fieldnames):
     with open(path, 'r') as csvfile:
-        reader = csv.DictReader(csvfile)
+        reader = csv.DictReader(csvfile, fieldnames=fieldnames)
         for row in reader:
-            arr_client_id.append(row[fieldnames])
-            print(row[fieldnames])
-        print('csv_read() done')
+            arr.append(row[fieldnames[0]])
+            print(row[fieldnames[0]])
+        arr.pop(0)
+        print(len(arr))
+    print('csv_read() done')
 
-def main(token, video_id):
+
+def main(token, target_id):
     graph = facebook.GraphAPI(access_token=token, version='2.3')
-    get_client_id(graph, video_id)
-    csv_write(arr_client_id, 'data/client_id.csv', 'client_id')
-    csv_read('data/client_id.csv', 'client_id')
-    get_client_url(graph)
-    csv_write(arr_client_url, 'data/client_url.csv', 'client_url')
-    print(len(arr_client_url))
-    print(len(arr_client_id))
+    get_personal_id(graph, target_id, 'data/personal_id.csv', ['id'])
+    csv_read(arr_personal_id, 'data/personal_id.csv', ['id'])
+    get_personal_url('data/personal_url.csv', ['url'])
+    csv_read(arr_personal_url, 'data/personal_url.csv', ['url'])
     print('main() done')
 
 
 main(
-    'EAACEdEose0cBANBtmd371nZCHF0HiC2d94ZA8A9sDUE17zWUme8eOPwMHNZCWwkIkQMuFUcowjAzk3AwZAd04ztBn7OaBBrbXVkZA1J8XViooapXPwiB0oZAqPRD2MQv7JCjUwZAhOMVriLADFKpyyQ9CvjsTg2jObuiCNCnGRIM8G6rBYVPLH6C11sZBScZCl5eC4C28Ret0gtAFUPYETem3',
-    '931722383530905')
+    'EAACEdEose0cBAIolBHvWgb4srZBT0q4zUZBvGkXDL4O6GU1TGp0ulm6A10Q0bGjF7fZAlRjWI4IRnWThH0mtIuJx8spwv2vgmQ4YejKZCakrmLNZAo9k92v64Ofcm2TAWffU9XYHwZBAnnLCWCWb0xM5Oqa0waspAvXgbj5Y2ZCUZAKkqYX68y0k6XnWb0xSk0tKM3lsosFMZAgZDZD',
+    '831259973706520')
